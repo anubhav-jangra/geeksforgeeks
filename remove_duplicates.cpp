@@ -1,3 +1,4 @@
+
 // { Driver Code Starts
 #include <bits/stdc++.h>
 using namespace std;
@@ -5,8 +6,26 @@ using namespace std;
 
  // } Driver Code Ends
 
+// Sol2 O(n) time, O(1) space
+class Solution{
+public:	
+	string removeDups(string S) {
+	    
+	    vector<bool> alpha(26, false);
+	    
+	    string ans = "";
+	    for (int i = 0; i < S.length(); i++)
+	        if (!alpha[S[i] - 'a']) { 
+	            ans += S[i];
+	            alpha[S[i] - 'a'] = true;
+	        }
+	        
+	    return ans;
+	}
+};
 
 // Sol1 - O(n^2) time and O(n) space
+/*
 class Solution{
 public:	
 	string removeDups(string S) {
@@ -18,6 +37,8 @@ public:
 	    return ans;
 	}
 };
+*/
+
 
 // { Driver Code Starts.
 
